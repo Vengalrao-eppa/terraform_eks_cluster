@@ -7,10 +7,10 @@ resource "aws_iam_role" "ops_user" {
   assume_role_policy = jsonencode({
     Statement = [{
       Effect = "Allow"
-      Principal = { AWS = "arn:aws:iam::XXXXXXXXXXXX:user/terraform_user" }
+      Principal = { AWS = "arn:aws:iam::1234566789001:user/ops-alice" }
       Action    = "sts:AssumeRole"
       Condition = {
-        IpAddress = { "aws:SourceIp" = ["XX.XX.XXX.XXX"] } #
+        IpAddress = { "aws:SourceIp" = ["52.94.236.248"] } #
       }
     }]
   })
